@@ -3,7 +3,9 @@ package com.ssi;
 public class Circle {
 	private double radius, area;
 
-	
+	public void xyz() {
+		//you want method to be called whenever the bean instance is about to be disposed.
+	}
 	public double getRadius() {
 		return radius;
 	}
