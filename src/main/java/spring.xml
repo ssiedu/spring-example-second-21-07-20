@@ -7,15 +7,65 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="c1" class="com.ssi.Circle" scope="singleton"  init-method="computeArea" destroy-method="xyz" >
-		<property name="radius" value="10"/>
+
+
+	<bean id="e1" class="com.ssi.Emp">
+		<property name="code" value="1001" />
+		<property name="name" value="xyz" />
+		<property name="address" ref="adr1" />
+		<property name="parents">
+			<map>
+				<entry key="father" value="abcd"/>	
+				<entry key="mother" value="pqrs"/>
+			</map>
+		</property>
+		
+		
+		<property name="area">
+			<set>
+				<value>Indore</value>
+				<value>Bhopal</value>
+				<value>Ujjain</value>
+				<value>Bhopal</value>
+			</set>
+		</property>
 	</bean>
 
-	<bean id="s1" class="com.ssi.Square">
-		<property name="side" value="5"/>
+	<bean id="e2" class="com.ssi.Emp">
+		<property name="code" value="1002" />
+		<property name="name" value="abc" />
+		<property name="address" ref="adr2"/>
+		<property name="area">
+			<set>
+				<value>Mumbai</value>
+				<value>Pune</value>
+				<value>Nasik</value>
+			</set>
+		</property>
+		<!-- <property name="address">
+			<bean class="com.ssi.Address">
+				<property name="hno" value="777" />
+				<property name="street" value="XyzRoad" />
+				<property name="city" value="Mumbai" />
+			</bean>
+		</property> -->
 	</bean>
 
-	<bean class="com.ssi.TestPostProcessor"/>
-	
+	<bean id="adr1" class="com.ssi.Address">
+		<property name="hno" value="555" />
+		<property name="street" value="ABRoad" />
+		<property name="city" value="Indore" />
+	</bean>
+
+	<bean id="adr2" class="com.ssi.Address">
+		<property name="hno" value="666" />
+		<property name="street" value="MGRoad" />
+		<property name="city" value="Bhopal" />
+	</bean>
+
+	<!-- <bean id="c1" class="com.ssi.Circle" scope="singleton" init-method="computeArea" 
+		destroy-method="xyz" > <property name="radius" value="10"/> </bean> <bean 
+		id="s1" class="com.ssi.Square"> <property name="side" value="5"/> </bean> 
+		<bean class="com.ssi.TestPostProcessor"/> -->
 </beans>
 
