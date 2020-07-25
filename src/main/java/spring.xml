@@ -7,20 +7,58 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<bean id="proj1" class="com.ssi.Project">
+		<property name="pcode" value="p111" />
+		<property name="title" value="AcSw" />
+		<property name="client" value="HDFC" />
+	</bean>
 
+	<bean id="proj2" class="com.ssi.Project">
+		<property name="pcode" value="p112" />
+		<property name="title" value="Firewall" />
+		<property name="client" value="Intel" />
+	</bean>
 
 	<bean id="e1" class="com.ssi.Emp">
 		<property name="code" value="1001" />
 		<property name="name" value="xyz" />
-		<property name="address" ref="adr1" />
-		<property name="parents">
+	<!-- 	<property name="address" ref="adr1" /> -->
+
+		<property name="addresses">
 			<map>
-				<entry key="father" value="abcd"/>	
-				<entry key="mother" value="pqrs"/>
+				<entry key="office" value-ref="adr1"/>
+				<entry key="resident" value-ref="adr2"/>
 			</map>
 		</property>
-		
-		
+
+
+
+
+		<property name="projects">
+			<list>
+				<ref bean="proj1"/>
+				<ref bean="proj2"/>
+			</list>
+		</property>
+
+
+		<property name="education">
+			<props>
+				<prop key="BE">DAVV</prop>
+				<prop key="ME">IIT-DEL</prop>
+			</props>
+		</property>
+
+
+
+		<property name="parents">
+			<map>
+				<entry key="father" value="abcd" />
+				<entry key="mother" value="pqrs" />
+			</map>
+		</property>
+
+
 		<property name="area">
 			<set>
 				<value>Indore</value>
@@ -34,7 +72,7 @@
 	<bean id="e2" class="com.ssi.Emp">
 		<property name="code" value="1002" />
 		<property name="name" value="abc" />
-		<property name="address" ref="adr2"/>
+		<!-- <property name="address" ref="adr2" /> -->
 		<property name="area">
 			<set>
 				<value>Mumbai</value>
@@ -42,13 +80,9 @@
 				<value>Nasik</value>
 			</set>
 		</property>
-		<!-- <property name="address">
-			<bean class="com.ssi.Address">
-				<property name="hno" value="777" />
-				<property name="street" value="XyzRoad" />
-				<property name="city" value="Mumbai" />
-			</bean>
-		</property> -->
+		<!-- <property name="address"> <bean class="com.ssi.Address"> <property 
+			name="hno" value="777" /> <property name="street" value="XyzRoad" /> <property 
+			name="city" value="Mumbai" /> </bean> </property> -->
 	</bean>
 
 	<bean id="adr1" class="com.ssi.Address">
