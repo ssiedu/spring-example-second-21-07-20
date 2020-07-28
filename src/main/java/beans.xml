@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean id="cust1" class="com.ssi.Customer" autowire="byName">
+		<!-- <property name="code" value="111"/>
+		<property name="name" value="ABC"/>	 -->
+	</bean>
+
+
+	<bean id="address1" class="com.ssi.Address">
+		<property name="hno" value="555" />
+		<property name="street" value="ABRoad" />
+		<property name="city" value="Indore" />
+	</bean> 
+	<bean id="address" class="com.ssi.Address">
+		<property name="hno" value="666" />
+		<property name="street" value="MGRoad" />
+		<property name="city" value="Bhopal" />
+	</bean> 
+
+<!-- 
+	<bean id="cust1" class="com.ssi.Customer">
+	
+		<constructor-arg value="ABC" index="1"/>
+		<constructor-arg value="XYZ" index="0"/>
+		<constructor-arg value="ABC" name="s2"/>
+		<constructor-arg value="XYZ" name="s1"/>
+		
+		<constructor-arg value="111" type="int" />
+		<constructor-arg value="ABC" type="String"/>
+		<constructor-arg ref="adr1"/>
+		
+	</bean>
+-->	
+
+
+</beans>
+
