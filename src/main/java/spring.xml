@@ -11,7 +11,7 @@
 	<bean id="proj1" class="com.ssi.Project">
 		<property name="pcode" value="p111" />
 		<property name="title" value="AcSw" />
-		<property name="client" value="HDFC" />
+		<property name="client" value="HDFC"/ >
 	</bean>
 
 	<bean id="proj2" class="com.ssi.Project">
